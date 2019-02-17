@@ -3,6 +3,7 @@ package com.codepath.debuggingchallenges.activities;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.codepath.debuggingchallenges.R;
 import com.codepath.debuggingchallenges.adapters.MoviesAdapter;
@@ -41,9 +42,8 @@ public class MoviesActivity extends AppCompatActivity {
         fetchMovies();
     }
 
-
     private void fetchMovies() {
-        String url = " https://api.themoviedb.org/3/movie/now_playing?api_key=";
+        String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=";
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, null, new JsonHttpResponseHandler() {
             @Override
@@ -54,6 +54,12 @@ public class MoviesActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
+                Log.d("SadFace", responseString.toString());
             }
         });
     }
