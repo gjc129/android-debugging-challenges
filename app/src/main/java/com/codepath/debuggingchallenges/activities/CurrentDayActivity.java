@@ -11,13 +11,14 @@ import java.util.Calendar;
 public class CurrentDayActivity extends AppCompatActivity {
 
     TextView tvDay;
+    String date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_day);
         tvDay = (TextView) findViewById(R.id.tvDay);
-        tvDay.setText(getDayOfMonth());
+        date = Integer.toString(getDayOfMonth());
     }
 
     private int getDayOfMonth() {

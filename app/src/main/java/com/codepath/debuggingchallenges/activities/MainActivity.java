@@ -3,6 +3,7 @@ package com.codepath.debuggingchallenges.activities;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.codepath.debuggingchallenges.R;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void launchCurrentDayActivity(View view) {
+        Log.d("smile", "is this working");
         launchActivity(CurrentDayActivity.class);
     }
 
