@@ -21,10 +21,8 @@ public class ToolbarActivity extends AppCompatActivity {
         // Make sure the toolbar exists in the activity and is not null
         setSupportActionBar(toolbar);
 
-        TextView tvDescription = (TextView) findViewById(R.id.tvDescription);
-        tvDescription.setText(R.string.hello);
+       // TextView tvDescription = (TextView) findViewById(R.id.tvDescription);
+       // tvDescription.setText(R.string.hello);
     }
-
-
 
 }
